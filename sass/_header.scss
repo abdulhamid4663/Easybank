@@ -1,0 +1,119 @@
+.header {
+    &.open {
+        nav {
+            padding-top: 19px;
+            padding-bottom: 19px;
+        }
+        .overlay {
+            visibility: visible;
+        }
+        .header__menu {
+            span {
+                &:first-child {
+                    transform: rotate(45deg);
+                }
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+                &:last-child {
+                    transform: rotate(-45deg);
+                } 
+            }
+        }
+        .header__mobile-links {
+            display: block;
+        }
+    }
+
+    nav {
+        background: #fff;
+        padding-top: 18px;
+        padding-bottom: 18px;
+
+        @include breakpoint-up (large) {
+            padding-top: 17px;
+            padding-bottom: 17px;
+
+        }
+    }
+    .overlay {
+        position: absolute;
+        background: linear-gradient($darkblue, transparent);
+        top: 63px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        z-index: 2;
+        visibility: hidden;
+    }
+    &__links {
+        
+        a {
+            position: relative;
+            font-size: 14px;
+            color: $grayishblue;
+            border-bottom: 4px solid transparent;
+            transition:color 350ms ease-in-out;
+            &:not(:last-child) {
+                margin-right: 32px;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 5px;
+                background: linear-gradient(to right, $limegreen, $brightcyan);
+                bottom: -30px;
+                left: 0;
+                opacity: 0;
+                transition: opacity 250ms ease-in-out;
+            }
+            &:hover::after, &:hover {
+                color: $darkblue;
+                opacity: 1;
+            } 
+        }
+
+    }
+    
+    &__menu {
+        span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: $darkblue;
+            transition: all 300ms ease-in-out;
+            transform-origin: 4px 1px;
+            &:not(:last-child) {
+                margin-bottom: 4px;
+            }
+        }
+    }
+    &__mobile-links {
+        position: absolute;
+        width: 90%;
+        height: auto;
+        top: 90px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        
+        background: #fff;
+        padding: 30px 0 35px;
+        border-radius: 5px;
+        display: none;
+        transition: display 300ms ease-in-out;
+
+        a {
+            font-size: 16px;
+            display: block;
+            color: $darkblue;
+            font-weight: 400;
+            text-align: center;
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}

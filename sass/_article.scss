@@ -1,0 +1,91 @@
+.article {
+    background-color: $verylightgray;
+    padding-top: 85px;
+    padding-bottom: 80px;
+
+    @include breakpoint-up (large) {
+        padding-top: 95px;
+        padding-bottom: 75px;
+    }
+    &__header {
+        margin-bottom: 35px;
+
+        @include breakpoint-up(large) {
+            margin-bottom: 55px;
+        }
+        h2 {
+            text-align: center;
+            font-size: 22px;
+
+            @include breakpoint-up (large) {
+                text-align: start;
+                font-size: 30px;
+            }
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column-gap: 30px;
+
+        @include breakpoint-up (medium) {
+            grid-template-columns: repeat(2, 1fr)
+        }
+
+        @include breakpoint-up (large) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+    &__content {
+        padding-right: 25px;
+        padding-left: 25px;
+        margin-bottom: 22px;
+        
+
+        &:hover .article__title {
+            color: $limegreen;
+        }
+
+        @include breakpoint-up(large) {
+            padding-right: 0;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+    }
+    &__image {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: $white;
+        min-height: 200px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    &__text {
+        background-color: $white;
+        padding: 30px 40px 25px;
+
+        @include breakpoint-up (xlarge) {
+            padding: 30px 20px 25px;
+        }
+        @include breakpoint-up (xxlarge) {
+            padding: 30px 50px 25px;
+        }
+    }
+    &__author {
+        font-size: 10px;
+        color: $grayishblue;
+        margin-bottom: 15px;
+    }
+    &__title {
+        font-size: 16px;
+        font-weight: 400;
+        color: $darkblue;
+        margin-bottom: 13px;
+        transition: color 300ms ease-in-out;
+    }
+    &__description {
+        font-size: 13px;
+        color: $grayishblue;
+    }
+}

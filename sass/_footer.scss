@@ -1,0 +1,110 @@
+.footer {
+    background-color: $darkblue;
+    padding-top: 36px;
+    padding-bottom: 40px;
+    color: $white;
+    text-align: center;
+
+    @include breakpoint-up(large) {
+        padding-top: 48px;
+        padding-bottom: 48px;
+        text-align: start;
+    }
+
+    &__grid {
+        
+        @include breakpoint-up(large) {
+            display: grid;
+            grid-template-areas: 
+            'logo col1 col2 cta'
+            'social col1 col2 copy';
+            
+        }
+    }
+    &__logo {
+        display: block;
+        margin-bottom: 25px;
+        grid-area: logo;
+
+        @include breakpoint-up(large) {
+            margin-bottom: 0;
+        }
+    }
+    &__social {
+        margin-bottom: 25px;
+        grid-area: social;
+
+        @include breakpoint-up(large){
+            display: flex;
+            align-items: end;
+            margin-bottom: 0;
+        }
+        a {
+            &:not(:last-child) {
+                margin-right: 13px;
+            }
+            svg {
+                path {
+                    transition: fill 300ms ease-in-out;
+                }
+            }
+            &:hover svg {
+                path {
+                    fill: $limegreen;
+                }
+            }
+        }
+    }
+    &__links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include breakpoint-up(large){
+            align-items: flex-start;
+        }
+
+        &.col1 {
+            grid-area: col1;
+        }
+
+        &.col2 {
+            grid-area: col2;
+        } 
+        a {
+            font-size: 15px;
+            font-weight: 700;
+            color: $grayishblue;
+            line-height: 2;
+            transition: color 300ms ease-in-out;
+
+            &:hover {
+                color: $limegreen;
+            }
+        }
+    }
+    &__button {
+        margin-top: 25px;
+        grid-area: cta;
+
+        @include breakpoint-up(large) {
+            margin-top: 0;
+            text-align: end;
+        }
+    }
+    &__copyright {
+        margin-top: 25px;
+        grid-area: copy;
+        p {
+            font-size: 14px;
+            color: $grayishblue;
+        }
+        @include breakpoint-up(large) {
+            margin-top: 0;
+            display: flex;
+            justify-content: end;
+            align-items: end;
+        }
+    }
+    
+}

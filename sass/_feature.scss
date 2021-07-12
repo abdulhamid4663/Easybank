@@ -1,0 +1,90 @@
+.feature {
+    background-color: $lightgrayishblue;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: center;
+
+    @include breakpoint-up (large) {
+        text-align: start;
+        padding-top: 110px;
+        padding-bottom: 100px;
+    }
+
+    &__header {
+        h2 {
+            font-size: 28px;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+
+            @include breakpoint-up (small) {
+                max-width: 350px;
+            }
+
+            @include breakpoint-up (large) {
+                font-size: 38px;
+                max-width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+        p {
+            max-width: 620px;
+            font-size: 15px;
+            color: $grayishblue;
+            margin-left: auto;
+            margin-right: auto;
+
+            @include breakpoint-up(large) {
+                font-size: 17px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    }
+    &__content {
+        flex: 1 0 100%;
+        margin-top: 75px;
+
+
+        @include breakpoint-up (medium) {
+            flex: 1 0 50%;
+        }
+        @include breakpoint-up(large) {
+            flex: 1;
+
+            &:not(:last-child) {
+                margin-right: 14px;
+            }
+        }
+    }
+    &__icon {
+        margin-bottom: 25px;
+    }
+    &__title {
+        font-size: 17px;
+        font-weight: 300;
+        color: $darkblue;
+        margin-bottom: 20px;
+        
+        @include breakpoint-up(large) {
+            font-size: 22px;
+        }
+    }
+    &__description {
+        font-size: 13px;
+        color: $grayishblue;
+        padding: 0 25px;
+        
+        @include breakpoint-up (large) {
+            font-size: 16px;
+            padding: 0; 
+        }
+        @include breakpoint-up (xlarge) {
+            padding: 0 6px 0 0;
+        }
+        @include breakpoint-up (xxlarge) {
+            padding: 0 66px 0 0; 
+        }
+    }
+}
